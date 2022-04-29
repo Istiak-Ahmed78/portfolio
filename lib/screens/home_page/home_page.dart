@@ -12,7 +12,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: CustomColors.nightThemeColor,
-      body: MainPart(),
+      body: SafeArea(child: MainPart()),
     );
   }
 }
@@ -22,38 +22,57 @@ class MainPart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size _size = MediaQuery.of(context).size;
     return SingleChildScrollView(
       child: Column(
         children: [
-          LayoutBuilder(builder: (context, constrain) {
-            if (constrain.maxWidth < 600) {
-              return const _ProfileImageWidgets();
-            } else {
-              return const _LargeSizeHandle();
-            }
-          }),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                height: _size.height * 0.4,
-                width: _size.width * 0.4,
-                decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        fit: BoxFit.cover,
-                        image: NetworkImage(MyImages.profileImage))),
-              ),
-              Column(
-                children: const [
-                  Text(
-                    'Istiak Ahmed',
-                    style: TextStyle(
-                        color: Colors.white, fontFamily: Fonts.ubuntu),
-                  )
-                ],
-              ),
-            ],
+          Padding(
+            padding: const EdgeInsets.only(top: 40, left: 15, right: 15),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const _ProfileImageWidgets(),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      RichText(
+                        text: const TextSpan(
+                            text: 'Hello, ',
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 25,
+                            ),
+                            children: [
+                              TextSpan(
+                                text: 'I\'m',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.normal,
+                                ),
+                              )
+                            ]),
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      const Text(
+                        'Istiak Ahmed',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: Fonts.exoItalic,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 30),
+                      ),
+                      RichText(
+                          text: const TextSpan(
+                              text: 'Flutter Mobile Apps Developer at ',
+                              children: [TextSpan(text: 'Rexo IT')]))
+                    ],
+                  ),
+                ),
+              ],
+            ),
           )
         ],
       ),
@@ -66,12 +85,23 @@ class _ProfileImageWidgets extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: Get.height,
-      width: Get.width,
-      decoration: const BoxDecoration(
-          image: DecorationImage(
-              fit: BoxFit.cover, image: NetworkImage(MyImages.profileImage))),
+    return Stack(
+      children: [
+        Container(
+          height: 110,
+          width: 110,
+          decoration:
+              const BoxDecoration(shape: BoxShape.circle, color: Colors.red),
+        ),
+        const Positioned(
+          left: 5,
+          top: 5,
+          child: CircleAvatar(
+            radius: 50,
+            backgroundImage: NetworkImage(MyImages.profileImage),
+          ),
+        ),
+      ],
     );
   }
 }
