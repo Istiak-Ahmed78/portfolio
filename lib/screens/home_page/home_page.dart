@@ -29,6 +29,10 @@ class MainPart extends StatelessWidget {
             Gap(
               times: 3,
             ),
+            BioPart(),
+            Gap(
+              times: 2,
+            ),
             EducationPart()
           ],
         ),

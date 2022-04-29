@@ -53,6 +53,9 @@ flutter:
     - family: Exo-Italic
       fonts:
         - asset: assets/Exo-Italic-VariableFont_wght.ttf
+    - family: Roboto
+      fonts:
+        - asset: assets/Roboto-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
