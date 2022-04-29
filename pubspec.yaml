@@ -50,6 +50,9 @@ flutter:
     - family: Ubuntu
       fonts:
         - asset: assets/Ubuntu-Regular.ttf
+    - family: Exo-Italic
+      fonts:
+        - asset: assets/Exo-Italic-VariableFont_wght.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
