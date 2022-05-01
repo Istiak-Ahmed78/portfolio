@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'package:portfolio/configs/fonts.dart';
 import 'package:portfolio/configs/images/images.dart';
 
-class TopPart extends StatelessWidget {
-  const TopPart({Key? key}) : super(key: key);
+class TopPartS extends StatelessWidget {
+  const TopPartS({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/configs/fonts.dart';
 
-class BioPart extends StatelessWidget {
-  const BioPart({Key? key}) : super(key: key);
+class BioPartLarge extends StatelessWidget {
+  const BioPartLarge({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -1,4 +1,4 @@
-export 'top_intro.dart';
+export 'top_intro/top_intro_s.dart';
 export 'education.dart';
-export 'bio.dart';
+export 'bio/bio_s.dart';
 export 'projects.dart';
