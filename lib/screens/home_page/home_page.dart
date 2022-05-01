@@ -33,7 +33,11 @@ class MainPart extends StatelessWidget {
             Gap(
               times: 2,
             ),
-            EducationPart()
+            EducationPart(),
+            Gap(
+              times: 2,
+            ),
+            Projects()
           ],
         ),
       ),
