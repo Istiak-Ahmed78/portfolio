@@ -10,7 +10,8 @@ class BioPartLarge extends StatelessWidget {
       child: RichText(
         text: TextSpan(
           text: '     Hi,',
-          style: const TextStyle(fontSize: 20, fontFamily: Fonts.roboto),
+          style: const TextStyle(
+              fontSize: 20, fontFamily: Fonts.roboto, color: Colors.white),
           children: [
             TextSpan(text: _myBio, style: Theme.of(context).textTheme.bodyText2)
           ],

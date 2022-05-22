@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/common_widgets/common_gap.dart';
 import 'package:portfolio/configs/colors.dart';
-import 'package:portfolio/coomon_widgets/common_gap.dart';
-import 'package:portfolio/screens/home_page/widgets/top_intro/top_intro_l.dart';
 import 'package:portfolio/screens/home_page/widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {

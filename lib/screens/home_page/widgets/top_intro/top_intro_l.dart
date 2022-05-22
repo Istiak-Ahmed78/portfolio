@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:portfolio/common_widgets/common_gap.dart';
 import 'package:portfolio/configs/fonts.dart';
 import 'package:portfolio/configs/images/images.dart';
-import 'package:portfolio/coomon_widgets/common_gap.dart';
 
 class TopPartL extends StatelessWidget {
   const TopPartL({Key? key}) : super(key: key);

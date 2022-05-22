@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/common_widgets/common_gap.dart';
 import 'package:portfolio/configs/fonts.dart';
-import 'package:portfolio/coomon_widgets/common_gap.dart';
 import 'package:portfolio/data/model/project_model.dart';
 import 'package:portfolio/utils/url_launch.dart';
 
@@ -21,8 +21,8 @@ class Projects extends StatelessWidget {
         ListView.builder(
           physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (context, index) =>
-              _ProjectTile(porjectModel: PorjectModel.projects[index]),
-          itemCount: PorjectModel.projects.length,
+              _ProjectTile(projectModel: ProjectModel.projects[index]),
+          itemCount: ProjectModel.projects.length,
           shrinkWrap: true,
         ),
       ],
@@ -31,8 +31,8 @@ class Projects extends StatelessWidget {
 }
 
 class _ProjectTile extends StatelessWidget {
-  final PorjectModel porjectModel;
-  const _ProjectTile({Key? key, required this.porjectModel}) : super(key: key);
+  final ProjectModel projectModel;
+  const _ProjectTile({Key? key, required this.projectModel}) : super(key: key);
 
   final double _height = 300;
   final double _weight = 150;
@@ -46,13 +46,13 @@ class _ProjectTile extends StatelessWidget {
     );
   }
 
-  Widget _projectTtrigerButton(ProjectType projectType) {
+  Widget _projectTriggerButton(ProjectType projectType) {
     return projectType is PrivateRepo
         ? Container(
             padding: const EdgeInsets.all(5),
             decoration: const BoxDecoration(color: Colors.indigo),
             child: const Text(
-              'Private respository',
+              'Private repository',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
           )
@@ -95,7 +95,7 @@ class _ProjectTile extends StatelessWidget {
           ),
         ),
         const Gap(),
-        _projectTtrigerButton(projectType)
+        _projectTriggerButton(projectType)
       ],
     );
   }
@@ -104,9 +104,9 @@ class _ProjectTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        _buildScreenshot(porjectModel.imageUrl),
+        _buildScreenshot(projectModel.imageUrl),
         _buildBody(
-            porjectModel.title, porjectModel.des, porjectModel.projectType)
+            projectModel.title, projectModel.des, projectModel.projectType)
       ],
     );
   }
